@@ -18,14 +18,13 @@
 				<li class="header-menu-item"><a class="header-menu-item-link" href="#prices">Цены</a></li>
 				<li class="header-menu-item"><a class="header-menu-item-link" href="#contacts">Контакты</a></li>
 			</menu>
-			<img src="iphone-1.png" style="margin-top: 120px;" width=500/>
 		</div>
 	</header>
 
 	<div class="row content">
 		<div class="col">
-			<!--p>SMS Lider &ndash; сервис, в рамках которого мы предлагаем неограниченный спектр решений в сфере SMS-рассылок для абсолютно любых направлений бизнеса. Если Вам необходимо продать товар или услугу при минимуме затрат и максимальной отдаче, SMS-рассылка &ndash; необходимый шаг на пути к успеху. Наряду с традиционными видами рекламы, рассылка коротких сообщений помогает донести информацию до потенциальных клиентов быстро и легко! Более того, Ваша реклама обязательно достигнет получателя и будет прочитана, ведь 98% всех пользователей мобильных телефонов читают входящие SMS.</p>
--->
+			<p>SMS Lider &ndash; сервис, в рамках которого мы предлагаем неограниченный спектр решений в сфере SMS-рассылок для абсолютно любых направлений бизнеса. Если Вам необходимо продать товар или услугу при минимуме затрат и максимальной отдаче, SMS-рассылка &ndash; необходимый шаг на пути к успеху. Наряду с традиционными видами рекламы, рассылка коротких сообщений помогает донести информацию до потенциальных клиентов быстро и легко! Более того, Ваша реклама обязательно достигнет получателя и будет прочитана, ведь 98% всех пользователей мобильных телефонов читают входящие SMS.</p>
+
 			<h2>Зачем вам SMS-рассылка?</h2>
 
 			<p>Рассылка через наш сервис поможет Вам</p>
@@ -55,26 +54,26 @@
 
 			<table class="prices">
 				<thead>
-				<tr><th class="prices-number">Количество</th><th class="prices-amount">Цена за сообщение, руб.</th></tr>
+					<tr><th class="prices-number">Количество</th><th class="prices-amount">Цена за сообщение, руб.</th></tr>
 				</thead>
 				<tbody>
-				<tr><td class="prices-number">от&nbsp;1&thinsp;000&nbsp;до&nbsp;5&thinsp;000</td><td class="prices-amount">0,34</td></tr>
-				<tr><td class="prices-number">до&nbsp;10&thinsp;000</td><td class="prices-amount">0,32</td></tr>
-				<tr><td class="prices-number">до&nbsp;25&thinsp;000</td><td class="prices-amount">0,29</td></tr>
-				<tr><td class="prices-number">до&nbsp;50&thinsp;000</td><td class="prices-amount">0,24</td></tr>
-				<tr><td class="prices-number">до&nbsp;100&thinsp;000</td><td class="prices-amount">0,20</td></tr>
-				<tr><td class="prices-number">до&nbsp;300&thinsp;000</td><td class="prices-amount">0,13</td></tr>
-				<tr><td class="prices-number">до&nbsp;500&thinsp;000</td><td class="prices-amount">0,11</td></tr>
-				<tr><td class="prices-number">до&nbsp;750&thinsp;000</td><td class="prices-amount">0,10</td></tr>
-				<tr><td class="prices-number">до&nbsp;1&thinsp;000&thinsp;000</td><td class="prices-amount">0,09</td></tr>
-				<tr><td class="prices-number">от 1&thinsp;000&thinsp;000</td><td class="prices-amount">договорная</td></tr>
+					<tr><td class="prices-number">от&nbsp;1&thinsp;000&nbsp;до&nbsp;5&thinsp;000</td><td class="prices-amount">0,34</td></tr>
+					<tr><td class="prices-number">до&nbsp;10&thinsp;000</td><td class="prices-amount">0,32</td></tr>
+					<tr><td class="prices-number">до&nbsp;25&thinsp;000</td><td class="prices-amount">0,29</td></tr>
+					<tr><td class="prices-number">до&nbsp;50&thinsp;000</td><td class="prices-amount">0,24</td></tr>
+					<tr><td class="prices-number">до&nbsp;100&thinsp;000</td><td class="prices-amount">0,20</td></tr>
+					<tr><td class="prices-number">до&nbsp;300&thinsp;000</td><td class="prices-amount">0,13</td></tr>
+					<tr><td class="prices-number">до&nbsp;500&thinsp;000</td><td class="prices-amount">0,11</td></tr>
+					<tr><td class="prices-number">до&nbsp;750&thinsp;000</td><td class="prices-amount">0,10</td></tr>
+					<tr><td class="prices-number">до&nbsp;1&thinsp;000&thinsp;000</td><td class="prices-amount">0,09</td></tr>
+					<tr><td class="prices-number">от 1&thinsp;000&thinsp;000</td><td class="prices-amount">договорная</td></tr>
 				</tbody>
 			</table>
 
 			<h2>Калькулятор</h2>
 
 			<div class="calculator">
-				<input id="num" class="calculator-number" value="5 450" type="text" />x <span id="price"  style="color: #EB5B50" >0,20</span> = <span id="total">1&thinsp;090</span> руб.
+				<input id="num" class="calculator-number" value="1000" type="text" disabl/>&times;<span class="calculator-price" id="price">0,20</span>=<span class="calculator-total" id="total">3&thinsp;200</span> руб.
 			</div>
 
 		</div>
@@ -91,44 +90,5 @@
 				</ul>
 		</div>
 	</footer>
-
-	<script>
-
-		var Calc;
-
-		Calc = (function() {
-
-			function addEventListener(element, type, callback) {
-				if (element.addEventListener) {
-					element.addEventListener(type, callback, false);
-
-				} else if (element.attachEvent) {
-					element.attachEvent('on' + callback, fn);
-
-				} else {
-					throw new Error('no listen method.');
-				}
-			}
-
-			function Calc(input, price, total) {
-				console.log(arguments);
-
-				addEventListener(input, 'keypress', this.listener);
-
-			}
-
-			Calc.prototype.listener = function () {
-				console.log(arguments);
-			}
-
-			return Calc;
-
-		})();
-
-		new Calc(document.getElementById('num'), document.getElementById('price'),
-				document.getElementById('total'));
-
-	</script>
-
 </body>
 </html>
