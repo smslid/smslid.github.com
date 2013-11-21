@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<title>Рассылка коротких сообщений, SMS-лидер</title>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-	<style type="text/css">
-
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			font: 16px/26px 'Roboto', sans-serif;
-			font-weight: 300;
-			-webkit-font-smoothing: subpixel-antialiased !important;
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-ms-backface-visibility: hidden;
-		}
-
-		.splash {
-			background: #EA546D;
-			background: -moz-linear-gradient(top, #484467 0, #EA546D 80%, #EB5B50 100%);
-			background: -webkit-linear-gradient(top, #484467 0, #EA546D 80%, #EB5B50 100%);
-			background: -o-linear-gradient(top, #484467 0, #EA546D 80%, #EB5B50 100%);
-			background: -ms-linear-gradient(top, #484467 0, #EA546D 80%, #EB5B50 100%);
-			background: linear-gradient(to bottom, #484467 0, #EA546D 80%, #EB5B50 100%);
-			color: #fff;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			left: 0;
-			width: 100%;
-			min-width: 960px;
-		}
-
-		.splash-layout {
-			width: 890px;
-			padding: 35px;
-			margin: 0 auto;
-		}
-
-		.splash h1 {
-			margin: 0 0 45px;
-			font-weight: 700;
-			font-size: 140%;
-		}
-
-		.splash h2 {
-			margin: 0 0 30px;
-			font-size: 220%;
-			font-weight: 300;
-		}
-
-		.splash p {
-			width: 450px;
-		}
-
-		.splash .phone {
-			margin-top: 30px;
-		}
-
-	</style>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<title>Рассылка коротких сообщений, SMS Lider</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="styles.css?1" />
 </head>
 <body>
 
-	<div class="splash">
-		<div class="splash-layout">
-			<h1>SMS-лидер</h1>
+	<header class="row">
+		<div class="col">
+			<h1>SMS Lider</h1>
 			<h2>SMS-рассылки для бизнеса</h2>
 			<p>Лучший сервис быстрой рассылки SMS-сообщений. Низкие цены</p>
-			<p class="phone">+7&thinsp;903&thinsp;076&thinsp;74&thinsp;57<br/>+7&thinsp;903&thinsp;076&thinsp;74&thinsp;58</p>
+			<menu class="header-menu">
+				<li class="header-menu-item"><a class="header-menu-item-link" href="http://cabinet.sms-lider.com">Личный кабинет</a></li>
+				<li class="header-menu-item"><a class="header-menu-item-link" href="#prices">Цены</a></li>
+				<li class="header-menu-item"><a class="header-menu-item-link" href="#contacts">Контакты</a></li>
+			</menu>
+		</div>
+	</header>
+
+	<div class="row content">
+		<div class="col">
+			<p>SMS Lider &ndash; сервис, в рамках которого мы предлагаем неограниченный спектр решений в сфере SMS-рассылок для абсолютно любых направлений бизнеса. Если Вам необходимо продать товар или услугу при минимуме затрат и максимальной отдаче, SMS-рассылка &ndash; необходимый шаг на пути к успеху. Наряду с традиционными видами рекламы, рассылка коротких сообщений помогает донести информацию до потенциальных клиентов быстро и легко! Более того, Ваша реклама обязательно достигнет получателя и будет прочитана, ведь 98% всех пользователей мобильных телефонов читают входящие SMS.</p>
+
+			<h2>Зачем вам SMS-рассылка?</h2>
+
+			<p>Рассылка через наш сервис поможет Вам</p>
+
+			<ul>
+				<li>улучшить сервис Вашей компании,</li>
+				<li>увеличить продажи,</li>
+				<li>экономить рекламный бюджет,</li>
+				<li>экономить время на оповещение клиентов,</li>
+				<li>упростить рабочий процесс общения с клиентами,</li>
+				<li>повысить рейтинг Вашего бизнеса.</li>
+			</ul>
+
+			<h2>Возможности</h2>
+
+			<ul>
+				<li>Скорость рассылки до 1000 SMS в секунду,</li>
+				<li>рассылки по расписанию,</li>
+				<li>доступная и удобная система управления через веб-интерфейс,</li>
+				<li>любое имя отправителя (бесплатно),</li>
+				<li>низкая стоимость отправки SMS.</li>
+			</ul>
+
+			<h2 id="prices">Цены</h2>
+
+			<p>Вы можете купить любое нужное вам количество сообщений. Срок действия купленных SMS не ограничен.</p>
+
+			<table class="prices">
+				<thead>
+					<tr><th class="prices-number">Количество</th><th class="prices-amount">Цена за сообщение, руб.</th></tr>
+				</thead>
+				<tbody>
+					<tr><td class="prices-number">от&nbsp;1&thinsp;000&nbsp;до&nbsp;5&thinsp;000</td><td class="prices-amount">0,34</td></tr>
+					<tr><td class="prices-number">до&nbsp;10&thinsp;000</td><td class="prices-amount">0,32</td></tr>
+					<tr><td class="prices-number">до&nbsp;25&thinsp;000</td><td class="prices-amount">0,29</td></tr>
+					<tr><td class="prices-number">до&nbsp;50&thinsp;000</td><td class="prices-amount">0,24</td></tr>
+					<tr><td class="prices-number">до&nbsp;100&thinsp;000</td><td class="prices-amount">0,20</td></tr>
+					<tr><td class="prices-number">до&nbsp;300&thinsp;000</td><td class="prices-amount">0,13</td></tr>
+					<tr><td class="prices-number">до&nbsp;500&thinsp;000</td><td class="prices-amount">0,11</td></tr>
+					<tr><td class="prices-number">до&nbsp;750&thinsp;000</td><td class="prices-amount">0,10</td></tr>
+					<tr><td class="prices-number">до&nbsp;1&thinsp;000&thinsp;000</td><td class="prices-amount">0,09</td></tr>
+					<tr><td class="prices-number">от 1&thinsp;000&thinsp;000</td><td class="prices-amount">договорная</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Калькулятор</h2>
+
+			<div class="calculator">
+				<input id="num" class="calculator-number" value="1000" type="text" disabl/>&times;<span class="calculator-price" id="price">0,20</span>=<span class="calculator-total" id="total">3&thinsp;200</span> руб.
+			</div>
+
 		</div>
 	</div>
+
+	<footer class="row">
+		<div class="col">
+			<h3 id="contacts">Контакты</h3>
+				<ul class="contacts">
+					<li class="contacts-location">Новосибирск, Россия</li>
+					<li class="contacts-phone">+7-903-076-7457</li>
+					<li class="contacts-phone">+7-903-076-7458</li>
+					<li class="contacts-email"><a href="mailto:mail@sms-lider.ru">mail@sms-lider.ru</a></li>
+				</ul>
+		</div>
+	</footer>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">
