@@ -4,7 +4,7 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<title>Рассылка коротких сообщений, SMS Lider</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="styles.css?1" />
+	<link rel="stylesheet" type="text/css" href="styles.css?2" />
 </head>
 <body>
 
@@ -73,7 +73,7 @@
 			<h2>Калькулятор</h2>
 
 			<div class="calculator">
-				<input id="num" class="calculator-number" value="10000" type="text" disabled/>&times;<span class="calculator-price" id="price">0,32</span>=<span class="calculator-total" id="total">3&thinsp;200</span> руб.
+				<input id="num" class="calculator-number" value="10000" type="text" />&times;<span class="calculator-price" id="price">0,32</span>=<span class="calculator-total" id="total">3&thinsp;200</span> руб.
 			</div>
 
 		</div>
@@ -90,6 +90,187 @@
 				</ul>
 		</div>
 	</footer>
+
+
+	<script>
+
+		var Calc, CalcWidget;
+
+		Calc = (function() {
+
+			/**
+			 * @var {Object}
+			 */
+			var prices = {
+				5000: .34,
+				10000: .32,
+				25000: .29,
+		  		50000: .24,
+		  		100000: .20,
+				300000: .13,
+				500000: .11,
+				750000: .10,
+				1000000: .09,
+				Infinity: Infinity
+			}
+
+			function Calc() {
+			}
+
+			/**
+			 *
+			 */
+			Calc.prototype.get = function(n) {
+				//
+				for (var number in prices) {
+					if (n <= number) {
+						return prices[number];
+					}
+				}
+
+				return 0;
+			};
+
+			/**
+			 * @param {Number} b
+			 * @return {Number}
+			 */
+			Calc.prototype.calc = function(n) {
+				return Math.round(this.get(n) * n);
+			};
+
+			return Calc;
+
+		})();
+
+
+		CalcWidget = (function() {
+
+			/**
+			 * @var {Calc}
+			 */
+			this._prices;
+
+			/**
+			 *
+			 */
+			function addEventListener(element, type, callback) {
+				if (element.addEventListener) {
+					element.addEventListener(type, callback, false);
+
+				} else if (element.attachEvent) {
+					element.attachEvent('on' + callback, fn);
+
+				} else {
+					throw new Error('no listen method.');
+				}
+			}
+
+			/**
+			 *
+			 */
+			if (!Function.prototype.bind) {
+				Function.prototype.bind = function (oThis) {
+				    	if (typeof this !== "function") {
+				    	// closest thing possible to the ECMAScript 5 internal IsCallable function
+				      	throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+			    	}
+
+			    var aArgs = Array.prototype.slice.call(arguments, 1), 
+			        fToBind = this, 
+			        fNOP = function () {},
+			        fBound = function () {
+			        	return fToBind.apply(this instanceof fNOP && oThis ? this : oThis, aArgs.concat(Array.prototype.slice.call(arguments)));
+			        };
+
+			    fNOP.prototype = this.prototype;
+			    fBound.prototype = new fNOP();
+
+			    return fBound;
+				};
+			}
+
+			/**
+			 *
+			 */
+			function CalcWidget(prices, input, price, total) {
+
+				this._prices = prices;
+				this._price = price;
+				this._total = total;
+
+				addEventListener(input, 'keydown', this.listener.bind(this));
+
+				addEventListener(input, 'keyup', (function(event) {
+					//
+					if (event.target.value > 1000000) {
+						event.target.value = 1000000;
+					}
+
+					this._price.innerHTML = String(this._prices.get(Number(event.target.value))).replace(/\./, ',');
+					this._total.innerHTML = this._prices.calc(Number(event.target.value));
+
+				}).bind(this));
+
+			}
+
+			/**
+			 *
+			 */
+			CalcWidget.prototype.listener = function (event) {
+				//
+				var key = event.charCode || event.keyCode || 0,
+					value = Number(event.target.value);
+
+				if (!(key == 8 || key == 9 ||
+					key == 46 ||
+					(key >= 37 && key <= 40) ||
+					(key >= 48 && key <= 57) ||
+					(key >= 96 && key <= 105)
+				)) {
+					if (event.stopPropagation) {
+						event.stopPropagation();
+					}
+					if (event.preventDefault) {
+						event.preventDefault();
+					}
+
+					return;
+				}
+
+				if (key == 38) {
+					event.target.value = ++value;
+					if (event.stopPropagation) {
+						event.stopPropagation();
+					}
+					if (event.preventDefault) {
+						event.preventDefault();
+					}
+
+				} else if (key == 40) {
+					event.target.value = --value || 1;
+				}
+
+				if (key == 48 && !value) {
+					if (event.stopPropagation) {
+						event.stopPropagation();
+					}
+					if (event.preventDefault) {
+						event.preventDefault();
+					}
+				}
+			}
+
+			return CalcWidget;
+
+		})();
+
+
+		var calc = new Calc(),
+			widget = new CalcWidget(calc, document.getElementById('num'), document.getElementById('price'),
+				document.getElementById('total'));
+
+	</script>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">

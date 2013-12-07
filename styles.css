@@ -150,15 +150,15 @@ footer, footer a {
 
 .calculator {
 	font-size: 200%;
-	margin: 50px 0;
-	text-align: center;
+	margin: 50px 0 50px 200px;
+	width: 450px;
 }
 
 .calculator input {
 	padding: 3px;
 	border: none;
 	border-bottom: #CCC 1px solid;
-	width: 100px;
+	width: 150px;
 	outline: 0;
 }
 
